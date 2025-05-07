@@ -125,7 +125,7 @@ a {
   margin: 0 auto;
   padding: 4rem 0;
   justify-content: center;
-  max-width: 1920px;
+  max-width: 120rem;
 }
 
 .column_1 {
@@ -178,8 +178,8 @@ a {
   margin-top: -2.5rem;
   margin-left: -3rem;
   background-color: #fff;
-  padding: 8px 12px 8px 12px;
-  border-radius: 8px;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  border-radius: 0.5rem;
   opacity: 0;
    transition: opacity 0.25s;
 }
@@ -208,10 +208,10 @@ a {
 }
 
 div.album_art {
-  width: 320px;
-  height: 320px;
+  width: 20rem;
+  height: 20rem;
   
-  --s: 80px; /* control the size */
+  --s: 5rem; /* control the size */
 
   --_g: radial-gradient(#4d4d4d 45%,#0000 46%);
   --_l: radial-gradient(#ffffff 15%,#0000 16%);
@@ -224,10 +224,10 @@ div.album_art {
 }
 
 @keyframes g5-1 {
-  to {background-position-x: 1px, calc(var(--s) - 1px),0,var(--s)}
+  to {background-position-x: 0.0625rem, calc(var(--s) - 0.0625rem),0,var(--s)}
 }
 @keyframes g5-2 {
-  to {background-position-y: 1px, calc(var(--s) - 1px),0,var(--s)}
+  to {background-position-y: 0.0625rem, calc(var(--s) - 0.0625rem),0,var(--s)}
 }
 
 .song_info_wrapper {
@@ -303,7 +303,8 @@ div.album_art {
   display: none;
 }
 
-@media screen and (max-width: 1023px) {
+/* <1023px */
+@media screen and (max-width: 64rem) {
     /* Styles for smartphones and small tablets */
     .mobile_only {
         display: inherit;
@@ -349,7 +350,8 @@ div.album_art {
   
 }
 
-@media screen and (min-width: 1024px) {
+/* >1024px */
+@media screen and (min-width: 64rem) {
     /* Styles for desktop */
     .desktop_only {
         display: inherit;
@@ -368,7 +370,8 @@ div.album_art {
   }
 }
 
-@media screen and (max-width: 1600px) {
+/* <1600px */
+@media screen and (max-width: 100rem) {
   .big_desktop_only {
     display: none;
   }
@@ -382,7 +385,8 @@ div.album_art {
   }
 }
 
-@media screen and (max-width: 1600px) and (min-width: 1024px) {
+/* 1024-1600px */
+@media screen and (max-width: 100rem) and (min-width: 64rem) {
   h3 {
     font-size: clamp(1.80rem, 3vw, 2.89rem);
   }
@@ -395,7 +399,8 @@ div.album_art {
   }
 }
 
-@media screen and (max-width: 767px) {
+/* <767px */
+@media screen and (max-width: 47.9375rem) {
   .title_wrapper {
     margin-bottom: -2rem;
   }
@@ -427,7 +432,7 @@ div.album_art {
   }
 
   .song_links a img {
-    width: clamp(64px, 10vw, 256px);
+    width: clamp(4rem, 10vw, 16rem);
     height: auto;
   }
 
