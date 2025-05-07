@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBSU10 - Web Product</title>
+  
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/oocsi-web.min.js"></script>
+  <script src="js/music_queries.js"></script>
+  <script src="js/oocsi.js"></script>
+  <script src="js/logic.js"></script>
+  <script src="js/vibe.js"></script>
+  <script src="js/device_states.js"></script>
+</head>
+
+  
+<body>
+
+  <div class="title_wrapper main_title mobile_only">
+    <h1>Serendipity</h1>
+    <h6>Web Interface</h6>
+  </div>
+
+  <div class="column_wrapper">
+  
+    <!-- Vertical Name -->
+    <div class="column_1 real_object big_desktop_only">
+      <h3>loading song...   loading artist...</h3>
+    </div>
+    
+    <div class="column_1 dummy_object big_desktop_only">
+      
+    </div>
+  
+    <!-- Main column -->
+    <div class="column_2">
+      <div class="title_wrapper">
+        <h2 class="current_vibe">getting vibe...</h2>
+        <h6>Current Vibe</h6>
+      </div>
+  
+      <div class="music_player">
+        <div class="album_art"></div>
+
+        <div class="song_info_wrapper">
+          <div class="song_info">
+            <h3>getting song name...</h3>
+            <h5>getting artist...</h5>
+          </div>
+    
+          <div class="song_links">
+            <a class="spotify_link" target="_blank">
+              <span class='offline_text'>track unavailable</span>
+              <img src="img/spotify_icon.svg" width="56px" height="56px" alt="logo for Spotify">
+            </a>
+            
+            <a class="tidal_link" target="_blank">
+              <span class='offline_text'>track unavailable</span>
+              <img src="img/tidal_icon.svg" width="56px" height="56px" alt="logo for Tidal">
+            </a>
+            
+            <a class="deezer_link" target="_blank">
+              <span class='offline_text'>track unavailable</span>
+              <img src="img/deezer_icon.svg" width="56px" height="56px" alt="logo for Deezer">
+            </a>
+            
+            <img class="big_desktop_only" src="img/placeholder_arrow.svg">
+            <p class="big_desktop_only">save this <br>song to your<br>playlist</p>
+          </div>
+        </div>
+      </div>
+  
+      <h4>Example Device States</h4>
+      <div class="device_wrapper">
+        <a class="device_0"><img src="img/devices/online_0.svg"></a>
+        <a class="device_1"><img src="img/devices/online_1.svg"></a>
+        <a class="device_2"><img src="img/devices/online_2.svg"></a>
+      </div>
+      
+    </div>
+  
+    <!-- About section -->
+    <div class="column_3">
+      <div class="title_wrapper main_title desktop_only">
+        <h1>Serendipity</h1>
+        <h6>Web Control</h6>
+      </div>
+      
+      <div class="text_wrapper">
+        <h2>About</h2>
+        <p class="italic">This is an example of what it would look like when in use. The system is currently inactive.</p>
+        <p><br>Serendipity is a connected music system intended for design spaces of the future.<br><br>
+        Nowadays, most students have their own (noise cancellation) headphones to listen to music. To improve community around music, we’ve created a shared listening experience for future student design spaces.<br><br>
+        Each device is placed in a separate area, perhaps in completely different design spaces. One person in each space activates their device by choosing the vibe of music they want to play. Once one user has submitted their vibe, it notifies the other devices to choose their vibe. The other user have 15 seconds to make a choice.<br><br>
+          After the timer has run up, it randomly chooses a vibe based off of all the user's submitted vibes and plays a playlist of that type of music.<br><br>
+        </p>
+      </div>
+  
+      <div class="text_wrapper">
+        <h3>Credits</h3>
+        <p>Stan Wijnen<br>
+        Max Nielsen<br>
+        Maarten van der Hart<br><br>
+  
+        Made for DBSU10 on April 4, 2024</p>
+      </div>
+    </div>
+
+  </div>
+  
+  
+  <script>
+      // insert any song name and artist here and refresh the website
+      basicAPITest("say something", "justin Timberlake");
+      updateVibe(41);
+      updateDeviceState(0, 1);
+      updateDeviceState(1, 2);
+      updateDeviceState(2, 1);
+      // establishOOCSIConnection();
+
+      // other tests
+      //replacePlaceholdersWithOffline();
+      // replacePlaceholdersWithError();
+  </script>
+
+</body>
+
+</html>

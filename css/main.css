@@ -1,0 +1,467 @@
+/* Sorry I don't have time to comment all this CCS :\ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
+
+@font-face {
+  font-family: 'Ink Free';
+  src: url("../fonts/Inkfree.ttf") format('truetype'),
+    url("../fonts/Inkfree.woff2") format('woff2');
+  font-weight: normal;
+  line-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.jetbrains-mono-italic {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+html {
+  width: 100%;
+  background: linear-gradient(#9c9991, var(--color-white));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* smooth scroll on non-touch devices */
+@media (hover: hover) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* --- COLOUR VARIABLES --- */
+:root {
+  --color-white: #F6F6F9;
+}
+
+/* --- TEXT DEFAULT VALUES --- */
+body {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Ink Free', cursive;
+  font-size: 4.33rem;
+  line-height: 100%;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Ink Free', cursive;
+  font-size: 3.6rem;
+  line-height: 100%;
+  margin: 0;
+}
+
+h3 {
+  font-family: 'Ink Free', cursive;
+  font-size: 2.89rem;
+  line-height: 100%;
+  margin: 0;
+}
+
+h4 {
+  font-size: 2.41rem;
+  font-style: italic;
+  line-height: 120%;
+  margin: 0;
+}
+
+h5 {
+  font-size: 1.80rem;
+  font-style: italic;
+  line-height: 110%;
+  margin: 0;
+}
+
+h6 {
+  font-size: 1.26rem;
+  font-style: italic;
+  line-height: 145%;
+  margin: 0;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 145%;
+  margin: 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+a {
+  font-size: 1rem;
+  line-height: 110%;
+  color: var(--color-button);
+  text-decoration: none;
+  margin: 0;
+}
+
+.title_wrapper h6 {
+  margin-bottom: 3rem;
+}
+
+.main_title.mobile_only {
+  margin: 2rem auto 0 auto;
+  width: min-content;
+}
+
+.column_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 3.75rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 4rem 0;
+  justify-content: center;
+  max-width: 1920px;
+}
+
+.column_1 {
+  display: flex;
+  width: 7%;
+  background: #9c9991;
+  margin-top: -6rem;
+  padding: 2rem 0;
+  height: min-content;
+  align-items: center;
+}
+
+.real_object {
+  position: fixed;
+  margin-left: -83%;
+}
+
+.dummy_object {
+  position: inherit;
+}
+
+.column_1 h3 {
+  margin: 0 auto;
+  writing-mode: vertical-lr;
+  height: 100vh;
+  max-height: 100vh;
+  transform: rotate(180deg);
+  
+  white-space: nowrap;
+  animation: scroll-down 60s infinite linear;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0) rotate(180deg);
+  }
+  100% {
+    transform: translateY(600%) rotate(180deg);
+  }
+}
+
+.offline img {
+  opacity: 0.3;
+}
+
+.offline_text {
+  position: absolute;
+  width: max-content;
+  display: inherit;
+  margin-top: -2.5rem;
+  margin-left: -3rem;
+  background-color: #fff;
+  padding: 8px 12px 8px 12px;
+  border-radius: 8px;
+  opacity: 0;
+   transition: opacity 0.25s;
+}
+
+.offline:hover .offline_text {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.column_2 {
+  width: 60%;
+}
+
+.column_2 .title_wrapper {
+  margin-bottom: -2rem;
+  margin-left: 0rem;
+}
+
+.music_player {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1.875rem;
+  align-items: stretch;
+  background-color: #9c9991;
+  padding: 4rem 2.75rem 4rem 4rem;
+}
+
+div.album_art {
+  width: 320px;
+  height: 320px;
+  
+  --s: 80px; /* control the size */
+
+  --_g: radial-gradient(#4d4d4d 45%,#0000 46%);
+  --_l: radial-gradient(#ffffff 15%,#0000 16%);
+  background: var(--_l),var(--_l),var(--_g),var(--_g);
+  background-position: 0 0,var(--s) var(--s);
+  background-size: calc(2*var(--s)) calc(2*var(--s));
+  animation: 
+    g5-1 2s cubic-bezier(0.5,92,0.5,-92) infinite, 
+    g5-2 2s cubic-bezier(0.5,92,0.5,-92) infinite -.5s;
+}
+
+@keyframes g5-1 {
+  to {background-position-x: 1px, calc(var(--s) - 1px),0,var(--s)}
+}
+@keyframes g5-2 {
+  to {background-position-y: 1px, calc(var(--s) - 1px),0,var(--s)}
+}
+
+.song_info_wrapper {
+  justify-content: space-between;
+  display: flex;
+  flex-flow: column;
+}
+
+.song_info h5 {
+  margin-top: 0.5rem;
+}
+
+.song_links {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.song_links > img {
+  margin-top: -3.75rem;
+  margin-left: 0.5rem;
+  transform: rotate(-20deg);
+}
+
+.song_links p {
+  margin-left: -0.25rem;
+  margin-top: -5rem;
+}
+
+.column_2 h4 {
+  margin: 4rem 0 1.25rem 0rem;
+}
+
+.device_wrapper {
+  background-color: #9c9991;
+  padding: 4rem 0 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+  " a a "
+  " b b ";
+  align-items: center;
+  justify-items: center;
+  grid-row-gap: 4rem;
+}
+
+.device_wrapper :last-child {
+  grid-area: b;
+  align-self: center;
+  justify-self: center;
+}
+
+.column_3 {
+  width: 25%;
+}
+
+.column_3 > :last-child {
+  margin-top: 4rem;
+  padding-top: 2rem;
+}
+
+.text_wrapper {
+  padding: 3.5rem 1.25rem 2rem 2rem;
+  background-color: #e2e1df;
+}
+
+.text_wrapper :not(p, br){
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    /* Styles for smartphones and small tablets */
+    .mobile_only {
+        display: inherit;
+    }
+
+    .desktop_only {
+        display: none;
+    }
+
+  .column_wrapper {
+    flex-flow: column;
+    padding: 2rem;
+  }
+
+  .column_2 {
+    width: auto;
+  }
+
+  .column_3 {
+    width: auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .column_3 > :last-child {
+    width: 40%;
+    margin-top: 0;
+    flex: 1;
+  }
+
+  .column_3 .text_wrapper {
+    min-width: 24rem;
+    flex: 2;
+  }
+
+  h3 {
+    font-size: clamp(1.80rem, 4.5vw, 2.89rem);
+  }
+
+  
+}
+
+@media screen and (min-width: 1024px) {
+    /* Styles for desktop */
+    .desktop_only {
+        display: inherit;
+    }
+
+    .mobile_only {
+        display: none;
+    }
+
+  .column_2 .title_wrapper {
+    margin-bottom: 3.75rem;
+  }
+
+  .device_wrapper a img {
+    width: clamp(5vw, 16rem, 20vw);
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .big_desktop_only {
+    display: none;
+  }
+
+  .column_wrapper {
+    width: 100%;
+  }
+
+  .music_player {
+    padding: 2rem 1.25rem 2rem 2rem;
+  }
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1024px) {
+  h3 {
+    font-size: clamp(1.80rem, 3vw, 2.89rem);
+  }
+
+  h1 {
+    font-size: clamp(2.89rem, 5vw, 4.33rem);
+  }
+  h2 {
+    font-size: clamp(2.41rem, 4vw, 3.6rem); 
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title_wrapper {
+    margin-bottom: -2rem;
+  }
+
+  .music_player {
+    flex-flow: column;
+    padding: clamp(0.5rem, 5%, 2rem);
+    text-align: center;
+  }
+
+  .song_info h3 {
+    font-size: clamp(1.80rem, 6vw, 2.89rem);
+  }
+
+  .album_art {
+    width: 100%;
+    height: auto;
+  }
+
+  .song_info_wrapper {
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .song_links {
+    gap: clamp(1rem, 5vw, 2rem);
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .song_links a img {
+    width: clamp(64px, 10vw, 256px);
+    height: auto;
+  }
+
+  .column_3 .text_wrapper {
+    width: inherit !important;
+    min-width: auto;
+  }
+
+  .column_wrapper {
+    padding: clamp(0.5rem, 5%, 2rem);
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(2.89rem, 15vw, 4.33rem);
+  }
+  h2 {
+    font-size: clamp(2.41rem, 7vw, 3.6rem); 
+  }
+
+  .column_3 {
+    flex-flow: column;
+    align-items: stretch;
+  }
+
+  .device_wrapper {
+    display: flex;
+    flex-flow: column;
+    gap: 4rem;
+    padding: 4rem clamp(0.5rem, 5%, 2rem);
+    justify-content: center;
+  }
+
+  .device_wrapper a img {
+    width: clamp(40vw, 20rem, 70vw);
+  }
+}
